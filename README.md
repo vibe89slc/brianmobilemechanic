@@ -67,6 +67,27 @@ python3 -m http.server 8080
 
 `_headers` is picked up automatically by Cloudflare Pages for caching + security headers.
 
+### Option A — Git integration (simplest)
+
+In the Cloudflare dashboard, connect the `brianmobilemechanic` repo. Cloudflare then
+auto-deploys on every push to `main`. No extra files or secrets required.
+
+### Option B — GitHub Action (included)
+
+This repo ships a workflow at `.github/workflows/deploy.yml` plus `wrangler.toml`. It
+deploys to Cloudflare Pages on every push to `main` (and can be run manually from the
+Actions tab). To enable it, add two repository secrets in
+**GitHub → Settings → Secrets and variables → Actions**:
+
+| Secret | Where to find it |
+|--------|------------------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens → Create Token → use the **"Edit Cloudflare Workers"** template (it includes Pages), or a custom token with **Account → Cloudflare Pages → Edit**. |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → Workers & Pages → right sidebar **Account ID**. |
+
+The first deploy will create the Pages project named `brianmobilemechanic` if it doesn't
+exist yet. Use only **one** of the two options (don't connect Git *and* run the Action, or
+you'll get double deploys).
+
 ## Before going live — update these
 
 - Replace the placeholder domain `https://briansmobilemechanics.com` in `index.html`,

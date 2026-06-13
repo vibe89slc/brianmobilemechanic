@@ -1,0 +1,5 @@
+# Cloudflare Pages configuration
+# The site is plain static files at the repo root, so the build output dir is "."
+name = "brianmobilemechanic"
+compatibility_date = "2025-06-13"
+pages_build_output_dir = "."
