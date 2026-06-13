@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# Local tooling / dev preview config
+.claude/
+
+# Editor
+.vscode/
+*.log
