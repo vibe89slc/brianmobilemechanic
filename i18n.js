@@ -179,6 +179,21 @@ window.I18N = {
     faq_q6: "How do I book?",
     faq_a6: "The fastest way is a quick call or text. Tell Brian your vehicle, the problem, and where you're located, and he'll take it from there.",
 
+    /* home — owner teaser + gallery */
+    home_about_eyebrow: "Meet your mechanic",
+    home_about_title: "Reliable hands behind every repair",
+    home_about_p: "Brian's Mobile Mechanics is built on one promise — quick, efficient, and reliable service that comes to you. No tow trucks, no inflated bills, no guessing games. Just honest work done right where you're parked.",
+    home_about_cta: "More about Brian",
+    gallery_eyebrow: "The work",
+    gallery_title: "On the road, in your driveway",
+    gallery_sub: "From quick roadside fixes to full repairs at home — this is the kind of work Brian takes care of across the valley.",
+    g_cap1: "Diagnostics & repair",
+    g_cap2: "Under the hood",
+    g_cap3: "Oil & maintenance",
+    g_cap4: "Detail & finish work",
+    g_cap5: "Back on the road",
+    g_cap6: "Every make & model",
+
     /* footer */
     footer_tagline: "Honest, reliable mobile auto repair that comes to you — proudly serving the Salt Lake City valley.",
     footer_services_h: "Services",
@@ -355,6 +370,21 @@ window.I18N = {
     faq_a5: "Siempre. Llama o textea con tu vehículo y el problema y recibirás un estimado honesto sin costo — sin presión para agendar.",
     faq_q6: "¿Cómo agendo?",
     faq_a6: "La forma más rápida es una llamada o texto. Dile a Brian tu vehículo, el problema y dónde estás, y él se encarga del resto.",
+
+    /* home — owner teaser + gallery */
+    home_about_eyebrow: "Conoce a tu mecánico",
+    home_about_title: "Manos confiables en cada reparación",
+    home_about_p: "Brian's Mobile Mechanics se basa en una sola promesa: un servicio rápido, eficiente y confiable que llega hasta ti. Sin grúas, sin facturas infladas, sin adivinanzas. Solo trabajo honesto hecho justo donde estás estacionado.",
+    home_about_cta: "Más sobre Brian",
+    gallery_eyebrow: "El trabajo",
+    gallery_title: "En el camino, en tu entrada",
+    gallery_sub: "Desde arreglos rápidos en la carretera hasta reparaciones completas en casa — este es el tipo de trabajo que Brian atiende por todo el valle.",
+    g_cap1: "Diagnóstico y reparación",
+    g_cap2: "Bajo el capó",
+    g_cap3: "Aceite y mantenimiento",
+    g_cap4: "Acabado y detalle",
+    g_cap5: "De vuelta al camino",
+    g_cap6: "Toda marca y modelo",
 
     footer_tagline: "Reparación móvil honesta y confiable que llega hasta ti — con orgullo, sirviendo el valle de Salt Lake City.",
     footer_services_h: "Servicios",
