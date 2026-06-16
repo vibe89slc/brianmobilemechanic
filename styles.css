@@ -486,14 +486,14 @@ body::before {
 .hero-badge .dot { background: var(--status, #2fae66); }
 .hero-badge .dot::after { background: var(--status, #2fae66); }
 
-/* ---------- "All makes & models" brand strip ---------- */
-.brands { text-align: center; }
-.brands .brands-label { font-family: var(--display); font-weight: 600; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 22px; }
-.brands-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 40px; }
-.brand-logo { display: inline-flex; align-items: center; justify-content: center; color: var(--ink); opacity: .38; transition: opacity .25s, color .25s, transform .3s var(--ease-spring); cursor: default; }
-.brand-logo svg { height: 34px; width: auto; max-width: 86px; display: block; }
-.brand-logo:hover { opacity: 1; color: var(--orange); transform: translateY(-3px); }
-@media (max-width: 560px) { .brands-row { gap: 18px 28px; } .brand-logo svg { height: 28px; } }
+/* ---------- "All makes & models" brand band (inside dark strip) ---------- */
+.brand-band { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 18px 24px 20px; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
+.brand-band .brands-label { font-family: var(--display); font-weight: 600; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #b8ada6; }
+.brands-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 36px; max-width: var(--maxw); }
+.brand-logo { display: inline-flex; align-items: center; justify-content: center; color: #ece7e2; opacity: .5; transition: opacity .25s, color .25s, transform .3s var(--ease-spring); cursor: default; }
+.brand-logo svg { height: 30px; width: auto; max-width: 80px; display: block; }
+.brand-logo:hover { opacity: 1; color: var(--orange-300); transform: translateY(-3px); }
+@media (max-width: 560px) { .brands-row { gap: 14px 24px; } .brand-logo svg { height: 24px; } }
 
 /* ---------- Sticky mobile action bar ---------- */
 .mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-top: 1px solid var(--line); box-shadow: 0 -8px 28px rgba(46,41,45,.10); }

@@ -18,7 +18,7 @@ window.I18N = {
     /* hero */
     hero_eyebrow: "Mobile Auto Repair · Salt Lake City, UT",
     hero_title: 'Repairs that come to your <span class="rotator"><span>driveway</span></span>',
-    hero_rotwords: "driveway|office|roadside|curb|garage",
+    hero_rotwords: "driveway|office|curb|garage",
     hero_lead: "From quick fixes to major repairs, Brian brings the shop to your driveway, your office, or the roadside — fast, efficient, and reliable. Get a free, no-pressure quote today.",
     status_open: "Open now",
     status_closed: "Closed now",
@@ -232,7 +232,7 @@ window.I18N = {
 
     hero_eyebrow: "Mecánico a Domicilio · Salt Lake City, UT",
     hero_title: 'Reparaciones que llegan a tu <span class="rotator"><span>entrada</span></span>',
-    hero_rotwords: "entrada|oficina|carretera|trabajo|casa",
+    hero_rotwords: "entrada|oficina|trabajo|casa",
     hero_lead: "Desde arreglos rápidos hasta reparaciones mayores, Brian lleva el taller a tu casa, tu trabajo o la carretera — rápido, eficiente y confiable. Pide hoy tu cotización gratis y sin compromiso.",
     status_open: "Abierto ahora",
     status_closed: "Cerrado ahora",
