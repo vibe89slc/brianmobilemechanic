@@ -489,9 +489,11 @@ body::before {
 /* ---------- "All makes & models" brand strip ---------- */
 .brands { text-align: center; }
 .brands .brands-label { font-family: var(--display); font-weight: 600; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 22px; }
-.brands-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 30px; }
-.brands-row span { font-family: var(--display); font-weight: 700; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--ink); opacity: .42; letter-spacing: -.01em; transition: opacity .25s, color .25s, transform .25s var(--ease-spring); cursor: default; }
-.brands-row span:hover { opacity: 1; color: var(--orange); transform: translateY(-2px); }
+.brands-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 40px; }
+.brand-logo { display: inline-flex; align-items: center; justify-content: center; color: var(--ink); opacity: .38; transition: opacity .25s, color .25s, transform .3s var(--ease-spring); cursor: default; }
+.brand-logo svg { height: 34px; width: auto; max-width: 86px; display: block; }
+.brand-logo:hover { opacity: 1; color: var(--orange); transform: translateY(-3px); }
+@media (max-width: 560px) { .brands-row { gap: 18px 28px; } .brand-logo svg { height: 28px; } }
 
 /* ---------- Sticky mobile action bar ---------- */
 .mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-top: 1px solid var(--line); box-shadow: 0 -8px 28px rgba(46,41,45,.10); }
