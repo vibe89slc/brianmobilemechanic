@@ -122,7 +122,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="eyebrow" data-reveal data-i18n="hero_eyebrow">Mobile Auto Repair · Salt Lake City, UT</span>
-          <h1 data-reveal data-delay="1" data-i18n="hero_title">Honest auto repair that comes to <span class="accent">you</span></h1>
+          <h1 data-reveal data-delay="1" data-i18n="hero_title">Repairs that come to your <span class="rotator"><span>driveway</span></span></h1>
           <p class="lead" data-reveal data-delay="2" data-i18n="hero_lead">From quick fixes to major repairs, Brian brings the shop to your driveway, your office, or the roadside — fast, efficient, and reliable. Get a free, no-pressure quote today.</p>
           <div class="hero-cta" data-reveal data-delay="3">
             <a href="contact.html" class="btn btn--primary" data-i18n="hero_cta1">Get a Free Quote</a>
@@ -146,9 +146,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span data-i18n="hero_float">We come to you</span>
           </div>
-          <div class="hero-badge">
+          <div class="hero-badge" id="hero-status">
             <span class="dot"></span>
-            <div><b data-i18n="hero_badge_b">Available now</b><small data-i18n="hero_badge_s">Serving the SLC valley</small></div>
+            <div><b>Open now</b><small>Mon–Sat · 7 AM – 7 PM</small></div>
           </div>
         </div>
       </div>
@@ -212,6 +212,16 @@
       </div>
     </section>
 
+    <!-- ===== Brands ===== -->
+    <section class="section section--cream" style="padding-top:clamp(40px,6vw,68px);padding-bottom:clamp(40px,6vw,68px)">
+      <div class="wrap brands" data-reveal>
+        <div class="brands-label" data-i18n="brands_title">We service all makes &amp; models</div>
+        <div class="brands-row">
+          <span>Toyota</span><span>Honda</span><span>Ford</span><span>Chevrolet</span><span>Nissan</span><span>Subaru</span><span>Jeep</span><span>Ram</span><span>GMC</span><span>Hyundai</span><span>Kia</span><span>BMW</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Why (dark split) ===== -->
     <section class="section section--ink">
       <div class="wrap split">
@@ -264,6 +274,21 @@
       </div>
     </section>
 
+    <!-- ===== Stats band ===== -->
+    <section class="section section--ink stats-band">
+      <div class="wrap">
+        <div class="section-head center" data-reveal style="margin-bottom:36px">
+          <span class="eyebrow" data-i18n="stats_eyebrow">By the numbers</span>
+        </div>
+        <div class="stats" data-reveal>
+          <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">100%</div><p data-i18n="stat1_l">Mobile — we come to you</p></div>
+          <div class="stat"><div class="stat-num" data-count="6">6</div><p data-i18n="stat2_l">Days a week, Mon–Sat</p></div>
+          <div class="stat"><div class="stat-num" data-count="12" data-suffix="+">12+</div><p data-i18n="stat3_l">Cities &amp; towns served</p></div>
+          <div class="stat"><div class="stat-num" data-count="2">2</div><p data-i18n="stat4_l">Languages — English &amp; Español</p></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Steps ===== -->
     <section class="section section--cream">
       <div class="wrap">
@@ -292,8 +317,38 @@
           </div>
           <p class="form-note" style="margin-top:18px" data-i18n="area_note">Not sure if you're in range? Send a quick message and Brian will let you know.</p>
         </div>
-        <div class="split-media" data-reveal="right" data-delay="1">
-          <img src="assets/garage-cars.webp" width="1000" height="800" loading="lazy" alt="Cars in a clean garage at night" />
+        <div class="radar-wrap glow-border" data-reveal="right" data-delay="1" aria-hidden="true">
+          <svg class="radar" viewBox="0 0 420 420" role="img">
+            <defs>
+              <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#bb6541" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#bb6541" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#d68a64" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#d68a64" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <circle cx="210" cy="210" r="200" fill="url(#radarGlow)"/>
+            <g stroke="#d68a64" stroke-opacity="0.22" fill="none">
+              <circle cx="210" cy="210" r="60"/><circle cx="210" cy="210" r="110"/>
+              <circle cx="210" cy="210" r="160"/><circle cx="210" cy="210" r="200"/>
+              <line x1="210" y1="10" x2="210" y2="410"/><line x1="10" y1="210" x2="410" y2="210"/>
+            </g>
+            <g class="radar-sweep"><path d="M210 210 L210 10 A200 200 0 0 1 380 120 Z" fill="url(#sweepGrad)"/></g>
+            <!-- city blips -->
+            <circle class="blip" style="--d:0s"   cx="150" cy="120" r="4"/>
+            <circle class="blip" style="--d:.5s"  cx="300" cy="150" r="4"/>
+            <circle class="blip" style="--d:1s"   cx="120" cy="270" r="4"/>
+            <circle class="blip" style="--d:1.5s" cx="290" cy="290" r="4"/>
+            <circle class="blip" style="--d:.8s"  cx="240" cy="95"  r="3"/>
+            <circle class="blip" style="--d:2s"   cx="100" cy="190" r="3"/>
+            <!-- center: SLC -->
+            <circle cx="210" cy="210" r="9" fill="#bb6541"/>
+            <circle class="radar-ping" cx="210" cy="210" r="9" fill="none" stroke="#bb6541" stroke-width="2"/>
+            <text x="210" y="244" text-anchor="middle" fill="#f3eee9" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="15">Salt Lake City</text>
+          </svg>
+          <span class="radar-tag" data-i18n="hero_float">We come to you</span>
         </div>
       </div>
     </section>

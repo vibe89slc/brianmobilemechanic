@@ -475,6 +475,76 @@ body::before {
 .owner-media .owner-badge span { font-size: .78rem; opacity: .9; }
 @media (max-width: 560px) { .owner-media .owner-badge { right: 12px; bottom: 12px; } }
 
+/* ---------- Hero rotating word ---------- */
+.rotator { display: inline-block; color: var(--orange); position: relative; white-space: nowrap; }
+.rotator::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.04em; height: 3px; background: var(--orange-100); border-radius: 3px; }
+.rotator > span { display: inline-block; transition: transform .42s var(--ease), opacity .42s var(--ease); }
+.rotator > span.out { transform: translateY(-65%); opacity: 0; }
+.rotator > span.in { transform: translateY(65%); opacity: 0; }
+
+/* ---------- Dynamic status dot ---------- */
+.hero-badge .dot { background: var(--status, #2fae66); }
+.hero-badge .dot::after { background: var(--status, #2fae66); }
+
+/* ---------- "All makes & models" brand strip ---------- */
+.brands { text-align: center; }
+.brands .brands-label { font-family: var(--display); font-weight: 600; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 22px; }
+.brands-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 30px; }
+.brands-row span { font-family: var(--display); font-weight: 700; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--ink); opacity: .42; letter-spacing: -.01em; transition: opacity .25s, color .25s, transform .25s var(--ease-spring); cursor: default; }
+.brands-row span:hover { opacity: 1; color: var(--orange); transform: translateY(-2px); }
+
+/* ---------- Sticky mobile action bar ---------- */
+.mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-top: 1px solid var(--line); box-shadow: 0 -8px 28px rgba(46,41,45,.10); }
+.mobile-bar a, .mobile-bar button { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 13px 8px; border-radius: 12px; font-family: var(--display); font-weight: 600; font-size: .92rem; }
+.mobile-bar svg { width: 18px; height: 18px; }
+.mobile-bar .mb-call { background: var(--ink); color: #fff; }
+.mobile-bar .mb-text { background: var(--cream-200); color: var(--ink); }
+.mobile-bar .mb-quote { background: var(--orange); color: #fff; }
+
+/* ---------- Back to top ---------- */
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 115; width: 46px; height: 46px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; opacity: 0; transform: translateY(12px) scale(.9); pointer-events: none; transition: opacity .3s, transform .3s var(--ease-spring), background .25s; box-shadow: var(--shadow-md); }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { background: var(--orange); }
+.to-top svg { width: 20px; height: 20px; }
+
+@media (max-width: 760px) {
+  .mobile-bar { display: flex; }
+  body { padding-bottom: 76px; }
+  .to-top { bottom: 86px; right: 14px; }
+}
+
+/* ---------- Stats band (animated counters) ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--display); font-weight: 700; font-size: clamp(2.7rem, 5.2vw, 3.8rem); line-height: 1; letter-spacing: -.03em; background: linear-gradient(135deg, #fff 0%, var(--orange-300) 55%, var(--orange) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 6px 28px rgba(187,101,65,.45)); }
+.stat p { margin: 12px 0 0; color: #c3bab4; font-size: .95rem; font-weight: 500; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 34px 18px; } }
+
+/* ---------- Coverage radar ---------- */
+.radar-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1 / 1; background: radial-gradient(circle at 50% 45%, #3a2018, var(--ink) 78%); box-shadow: var(--shadow-lg); display: grid; place-items: center; padding: 5%; }
+.radar { width: 100%; height: 100%; display: block; }
+.radar-sweep { transform-origin: 210px 210px; animation: radarSpin 5.5s linear infinite; }
+@keyframes radarSpin { to { transform: rotate(360deg); } }
+.blip { fill: #f1d9cc; animation: blip 2.8s ease-out infinite; animation-delay: var(--d, 0s); }
+@keyframes blip { 0%,100% { opacity: .15; } 18% { opacity: 1; } 55% { opacity: .25; } }
+.radar-ping { transform-box: fill-box; transform-origin: center; animation: radarPing 2.6s ease-out infinite; }
+@keyframes radarPing { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(4.4); opacity: 0; } }
+.radar-tag { position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,.12); backdrop-filter: blur(6px); color: #fff; font-family: var(--display); font-weight: 600; font-size: .82rem; padding: 7px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); display: inline-flex; align-items: center; gap: 7px; }
+.radar-tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #2fae66; box-shadow: 0 0 0 0 rgba(47,174,102,.5); animation: ping 1.8s ease-out infinite; }
+@media (max-width: 940px) { .radar-wrap { max-width: 440px; margin: 0 auto; width: 100%; } }
+
+/* ---------- Animated gradient (glow) border utility ---------- */
+@property --gb-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.glow-border { position: relative; isolation: isolate; }
+.glow-border::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; z-index: -1;
+  background: conic-gradient(from var(--gb-angle), var(--orange), transparent 22%, transparent 50%, var(--orange-300) 72%, var(--orange));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: gbSpin 4.5s linear infinite;
+}
+@keyframes gbSpin { to { --gb-angle: 360deg; } }
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
